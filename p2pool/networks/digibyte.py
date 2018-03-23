@@ -13,7 +13,7 @@ MIN_TARGET=0
 MAX_TARGET=2**256//2**20 - 1
 PERSIST=True
 WORKER_PORT=5027
-BOOTSTRAP_ADDRS='crypto.office-on-the.net p2p-spb.xyz sha.dgb.crabs.pro tv-msk.mine.nu'.split(' ')
+BOOTSTRAP_ADDRS='crypto.office-on-the.net p2p-spb.xyz 46.188.44.20 siberia.mine.nu gigablock.mine.nu tomsk.mine.nu 45.32.210.32'.split(' ')
 ANNOUNCE_CHANNEL='#p2pool'
 VERSION_CHECK = lambda v: None if 6160200 <= v else 'DigiByte version too old. Upgrade to 6.16.2 or newer!'
 VERSION_WARNING = lambda v: None
