@@ -13,6 +13,7 @@ ADDRESS_VERSION = 30
 RPC_PORT = 14023
 RPC_CHECK = defer.inlineCallbacks(lambda bitcoind: defer.returnValue(
             (yield helper.check_block_header(bitcoind, '7497ea1b465eb39f1c8f507bc877078fe016d6fcb6dfad3a64c98dcc6e1e8496')) and # genesis block
+            (yield bitcoind.rpc_getmininginfo())['pow_algo'] = 'sha256d' and
             (yield bitcoind.rpc_getblockchaininfo())['chain'] != 'test'
         ))
 SUBSIDY_FUNC = lambda height: __import__('digibyte_subsidy').GetBlockBaseValue(height)
