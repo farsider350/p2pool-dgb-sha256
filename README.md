@@ -1,7 +1,7 @@
 Requirements:
 -------------------------
 Generic:
-* Digibyte >=6.14.2
+* Digibyte >=6.16.4
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
