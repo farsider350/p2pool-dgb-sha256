@@ -1,7 +1,7 @@
 Requirements:
 -------------------------
 Generic:
-* Digibyte >=6.16.4
+* Digibyte >=6.16.5
 * Python >=2.6
 * Twisted >=10.0.0
 * python-argparse (for Python =2.6)
@@ -37,11 +37,36 @@ In order to run Digibyte nodes you must first install the digibyte_subsidy modul
 
 Running P2Pool:
 -------------------------
-To use P2Pool, you must be running your own local myriadcoind. For standard configurations, using P2Pool should be as simple as:
+To use P2Pool, you must be running your own local digibyted.
+Sample configuration for the DGB daemon with a pruned blockchain:
+    rpcuser=rpc_login
+    rpcpassword=rpc_password
+    prune=2048
+    listenonion=0
+    listen=1
+    daemon=1
+    server=1
+    algo=sha256d
+    onlynet=IPv4
+    rpcworkqueue=32
+    rpcthreads=96
+    rpcallowip=127.0.0.1
+    rpcport=14023
+    port=12025
 
+For standard configurations, using P2Pool should be as simple as:
+
+To run 1st network:
     python run_p2pool.py --net digibyte
 
-To make your node accessible from the internet, open the following ports on your router (both the worker port and peer-2-peer port please!): Worker Port = 5027; Peer-2-Peer Port = 5026
+To run 2nd network:
+    python run_p2pool.py --net digibyte2
+
+To make your node accessible from the internet, open the following ports on your router (both the worker port and peer-2-peer port please!):
+For 1st network:
+    Worker Port = 5027; Peer-2-Peer Port = 5026
+For 2nd network:
+    Worker Port = 5030; Peer-2-Peer Port = 5031
 
 Run for additional options:
 
